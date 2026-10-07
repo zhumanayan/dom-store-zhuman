@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Store - Lab 5</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>DOM Store Management</h1>
+
+    <!-- Форма добавления -->
+    <form id="add-item-form" novalidate>
+      <div class="form-group">
+        <label for="name">Item Name</label>
+        <input type="text" id="name" placeholder="e.g. Studio Rent">
+        <span class="error-msg" id="name-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price ($)</label>
+        <input type="number" id="price" step="0.01" placeholder="e.g. 50">
+        <span class="error-msg" id="price-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="qty">Quantity</label>
+        <input type="number" id="qty" placeholder="e.g. 2">
+        <span class="error-msg" id="qty-error"></span>
+      </div>
+
+      <button type="submit">Add Item</button>
+    </form>
+
+    <!-- Таблица товаров -->
+    <table class="store-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price ($)</th>
+          <th>Quantity</th>
+          <th>Total ($)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="items-list">
+        <!-- Элементтер JS арқылы салынады -->
+      </tbody>
+    </table>
+
+    <!-- Живой Total -->
+    <div class="total-section">
+      Total Amount: $<span id="total-amount">0.00</span>
+    </div>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
