@@ -2,59 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOM Store - Lab 5</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOM Store Management</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
+  <div class="card">
     <h1>DOM Store Management</h1>
 
-    <!-- Форма добавления -->
-    <form id="add-item-form" novalidate>
-      <div class="form-group">
-        <label for="name">Item Name</label>
-        <input type="text" id="name" placeholder="e.g. Studio Rent">
-        <span class="error-msg" id="name-error"></span>
-      </div>
+    <form id="add-form" novalidate>
+      <label for="name">Item Name</label>
+      <input id="name" type="text" placeholder="e.g. Studio Rent">
+      <div class="error" id="name-error"></div>
 
-      <div class="form-group">
-        <label for="price">Price ($)</label>
-        <input type="number" id="price" step="0.01" placeholder="e.g. 50">
-        <span class="error-msg" id="price-error"></span>
-      </div>
+      <label for="price">Price ($)</label>
+      <input id="price" type="text" inputmode="decimal" placeholder="e.g. 50">
+      <div class="error" id="price-error"></div>
 
-      <div class="form-group">
-        <label for="qty">Quantity</label>
-        <input type="number" id="qty" placeholder="e.g. 2">
-        <span class="error-msg" id="qty-error"></span>
-      </div>
+      <label for="qty">Quantity</label>
+      <input id="qty" type="text" inputmode="numeric" placeholder="e.g. 2">
+      <div class="error" id="qty-error"></div>
 
-      <button type="submit">Add Item</button>
+      <button type="submit" class="btn btn-add">Add Item</button>
     </form>
 
-    <!-- Таблица товаров -->
-    <table class="store-table">
+    <table>
       <thead>
-        <tr>
-          <th>Name</th>
-          <th>Price ($)</th>
-          <th>Quantity</th>
-          <th>Total ($)</th>
-          <th>Actions</th>
-        </tr>
+        <tr><th>Name</th><th>Price ($)</th><th>Quantity</th><th>Total ($)</th><th>Actions</th></tr>
       </thead>
-      <tbody id="items-list">
-        <!-- Элементтер JS арқылы салынады -->
-      </tbody>
+      <tbody id="list"></tbody>
     </table>
 
-    <!-- Живой Total -->
-    <div class="total-section">
-      Total Amount: $<span id="total-amount">0.00</span>
-    </div>
+    <div class="total" id="total">Total Amount: $0.00</div>
   </div>
 
-  <script type="module" src="src/app.js"></script>
+    <script type="module" src="src/app.js"></script>
 </body>
 </html>
